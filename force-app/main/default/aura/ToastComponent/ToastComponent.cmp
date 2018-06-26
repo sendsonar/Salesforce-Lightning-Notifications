@@ -1,0 +1,44 @@
+<aura:component>
+  <aura:attribute name="variant" type="string" default="info" />
+  <aura:attribute name="message" type="string" default="" />
+  <aura:attribute name="title" type="string" default="" />
+  <aura:attribute name="mode" type="string" default="dismissable" />
+  <aura:attribute name="id" type = "string" default="" />
+
+  <aura:registerEvent name="onRemoveToast" type="c:removeToastEvent" />
+
+  <div class="slds-notify_container slds-is-relative">
+    <div class="{!'slds-notify slds-notify_toast slds-theme_'+v.variant}" role="alert">
+      <span class="slds-assistive-text">{!v.variant}</span>
+      <span class="slds-m-right_small slds-no-flex slds-align-top">
+        <aura:if isTrue="{!v.variant == 'info'}">
+          <lightning:icon iconName="utility:info" alternativeText="Information" variant="inverse" size="small"/>
+        </aura:if>
+        <aura:if isTrue="{!v.variant == 'success'}">
+          <lightning:icon iconName="utility:success" alternativeText="Success" variant="inverse" size="small" />
+        </aura:if>
+        <aura:if isTrue="{!v.variant == 'error'}">
+          <lightning:icon iconName="utility:error" alternativeText="Error" variant="inverse" size="small" />
+        </aura:if>
+        <aura:if isTrue="{!v.variant == 'warning'}">
+          <lightning:icon iconName="utility:warning" alternativeText="Error" size="small" />
+        </aura:if>
+      </span>
+      <div class="slds-notify__content">
+        <h2 class="slds-text-heading_small ">{!v.title}</h2>
+        <p>{!v.message}</p>
+      </div>
+
+      <div class="slds-notify__close slds-align-top" >
+        <lightning:buttonIcon
+          iconName="utility:close"
+          variant="{!(v.variant == 'warning') ? 'bare' : 'bare-inverse'}"
+          title="close"
+          alternativeText="Close window"
+          size="large"
+          onclick="{!c.removeToast}"
+        />
+      </div>
+    </div>
+  </div>
+</aura:component>

@@ -1,0 +1,17 @@
+<aura:component>
+  <aura:attribute name="toasts" type="Object[]" default="[]" />
+
+  <aura:method name="showToast" action="c.showToast" />
+
+  <div class="slds-notify_container slds-is-absolute">
+    <aura:iteration items="{!v.toasts}" var="toast">
+      <SendSonar:ToastComponent
+        variant="{!toast.variant}"
+        message="{!toast.message}"
+        title="{!toast.title}"
+        mode="{!toast.mode}"
+        onRemoveToast="{!c.removeToast}"
+      />
+    </aura:iteration>
+  </div>
+</aura:component>

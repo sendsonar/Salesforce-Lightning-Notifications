@@ -1,0 +1,6 @@
+<aura:event
+  type="COMPONENT"
+  description="Removes a Toast with specified ID (BTW IDs are array index for now) "
+>
+  <aura:attribute name="id" type="String" />
+</aura:event>

@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Sonar's show toast event" >
+  <aura:attribute name="message" type="String" />
+  <aura:attribute name="variant" type="String" />
+  <aura:attribute name="title" type="String" />
+</aura:event>
