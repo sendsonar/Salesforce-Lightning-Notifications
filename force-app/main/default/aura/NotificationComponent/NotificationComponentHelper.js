@@ -2,7 +2,7 @@
     removeToast: function(component, toastId) {
         var toasts = component.get('v.toasts')
         component.set('v.toasts', toasts.filter(function(toast){
-            toast.id !== toastId
+            return toast.id !== toastId
         }))
     },
 
