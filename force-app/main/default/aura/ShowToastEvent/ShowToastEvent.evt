@@ -2,4 +2,5 @@
   <aura:attribute name="message" type="String" />
   <aura:attribute name="variant" type="String" />
   <aura:attribute name="title" type="String" />
+  <aura:attribute name="mode" type="String" />
 </aura:event>

@@ -1,0 +1,5 @@
+<aura:component>
+  <aura:registerEvent name="showToastEvent" type="c.ShowToastEvent" />
+
+  <aura:method name="showToast" action="c.showToast" />
+</aura:component>

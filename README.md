@@ -15,14 +15,25 @@ copy/paste files into your project.
 
 ### "Installation"
 In this current itteration you put `NotificationComponent` probably in your
-root component with an `aura:id` attribute
+root component
 
 ```html
-<c:NotificationComponent aura:id="notifLib"/>
+<c:NotificationComponent />
 ```
 
+put `NotficationLibrary` in whatever component you want to call `showToast`
+with an `aura:id` attribute
+
+```html
+<c:NotificationLibrary aura:id="notifLib"/>
+```
+
+`ShowToastEvent` must exist.
+
+You might have to mess around with namespaces if you're using namespaces
+
 ### Show Toast
-You'll need to `.find` your `NotificationComponent` and call `showToast` on it.
+You'll need to `.find` your `NotificationLibrary` and call `showToast` on it.
 
 ```javascript
 component.find('notifLib').showToast({
@@ -38,15 +49,6 @@ placeholder functionality.
 ### Show Notice
 Haven't found a need to implement `showNotice` yet. Feel free to make a PR
 if you would like to contribute.
-
-## Future
-In next few interations, if I get around to it, I'm imagining creating seperate
-components for showing Toasts and Prompts that listen to Applcation level
-"showToast" and "showNotice" events fired by `NotificationComponent`'s
-`showToast` and `showNotice` methods. This way you just put your Toasts and
-Prompts component in your root and put `NotificationComponent` wherever you
-might want to call `showToast` or `showNotice`. Names will probably change
-i.e `NotficationComponent` will be renamed to `notificationsLibrary`.
 
 ## Contributing
 Feel free to make a PR. I should probably get some tests and linting together.

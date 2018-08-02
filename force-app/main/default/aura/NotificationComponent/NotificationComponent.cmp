@@ -1,11 +1,11 @@
 <aura:component>
   <aura:attribute name="toasts" type="Object[]" default="[]" />
 
-  <aura:method name="showToast" action="c.showToast" />
+  <aura:handler event="c:ShowToastEvent" action="{!c.showToast}" />
 
   <div class="slds-notify_container slds-is-absolute">
     <aura:iteration items="{!v.toasts}" var="toast">
-      <SendSonar:ToastComponent
+      <c:ToastComponent
         variant="{!toast.variant}"
         message="{!toast.message}"
         title="{!toast.title}"
