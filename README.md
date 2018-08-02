@@ -17,7 +17,7 @@ copy/paste files into your project.
 In this current itteration you put `NotificationComponent` probably in your
 root component
 
-````
+```
 <c:NotificationComponent />
 ```
 
