@@ -17,18 +17,18 @@ copy/paste files into your project.
 In this current itteration you put `NotificationComponent` probably in your
 root component
 
-```html
+````
 <c:NotificationComponent />
 ```
 
-put `NotficationLibrary` in whatever component you want to call `showToast`
-with an `aura:id` attribute
+Put `NotficationLibrary` in whatever component you want to call `showToast`.
+Incude an `aura:id` attribute
 
-```html
+```
 <c:NotificationLibrary aura:id="notifLib"/>
 ```
 
-`ShowToastEvent` must exist.
+`ShowToastEvent` must exist somewhere.
 
 You might have to mess around with namespaces if you're using namespaces
 
